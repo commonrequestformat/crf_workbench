@@ -1,0 +1,31 @@
+<?php
+/**
+ * @file
+ * Code for the CRF Workbench feature.
+ */
+
+include_once 'crf_workbench.features.inc';
+
+
+/**
+ * Implements hook_workbench_access_node_element_alter().
+ */
+function crf_workbench_workbench_access_node_element_alter(&$element, $form_state, $active) {
+  // Hide section select box. If the current user has permission to
+  // edit the form we can savely assume the node belongs to a section
+  // his or her role belongs to.
+  global $user;
+  if (isset($element)) {
+    $element['#type'] = 'hidden';
+    
+    $ocha_term = taxonomy_get_term_by_name('OCHA', 'sections');
+    $clusters_term = taxonomy_get_term_by_name('Clusters', 'sections');
+    
+    if (in_array('manager', $user->roles)) {
+      $element['#value'] = array(current(array_keys($ocha_term)));
+    }
+    else if (in_array('editor', $user->roles)) {
+      $element['#value'] = array(current(array_keys($clusters_term)));
+    }
+  }
+}
