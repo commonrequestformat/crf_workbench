@@ -127,16 +127,6 @@ function crf_workbench_user_default_permissions() {
     'module' => 'workbench_moderation',
   );
 
-  // Exported permission: moderate content from finalised to published.
-  $permissions['moderate content from finalised to published'] = array(
-    'name' => 'moderate content from finalised to published',
-    'roles' => array(
-      0 => 'administrator',
-      1 => 'manager',
-    ),
-    'module' => 'workbench_moderation',
-  );
-
   // Exported permission: moderate content from needs_review to submitted_to_ocha.
   $permissions['moderate content from needs_review to submitted_to_ocha'] = array(
     'name' => 'moderate content from needs_review to submitted_to_ocha',
@@ -144,26 +134,6 @@ function crf_workbench_user_default_permissions() {
       0 => 'administrator',
       1 => 'editor',
       2 => 'manager',
-    ),
-    'module' => 'workbench_moderation',
-  );
-
-  // Exported permission: moderate content from published to archived.
-  $permissions['moderate content from published to archived'] = array(
-    'name' => 'moderate content from published to archived',
-    'roles' => array(
-      0 => 'administrator',
-      1 => 'manager',
-    ),
-    'module' => 'workbench_moderation',
-  );
-
-  // Exported permission: moderate content from submitted_to_ocha to finalised.
-  $permissions['moderate content from submitted_to_ocha to finalised'] = array(
-    'name' => 'moderate content from submitted_to_ocha to finalised',
-    'roles' => array(
-      0 => 'administrator',
-      1 => 'manager',
     ),
     'module' => 'workbench_moderation',
   );

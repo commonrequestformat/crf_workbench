@@ -9,23 +9,11 @@
  */
 function crf_workbench_workbench_moderation_export_states() {
   $items = array(
-    'archived' => array(
-      'name' => 'archived',
-      'label' => 'Archived',
-      'description' => 'Archive',
-      'weight' => '0',
-    ),
     'draft' => array(
       'name' => 'draft',
       'label' => 'Draft',
       'description' => 'Work in progress',
       'weight' => '-10',
-    ),
-    'finalised' => array(
-      'name' => 'finalised',
-      'label' => 'Finalised',
-      'description' => 'Ready for publication',
-      'weight' => '-7',
     ),
     'needs_review' => array(
       'name' => 'needs_review',
@@ -35,7 +23,7 @@ function crf_workbench_workbench_moderation_export_states() {
     ),
     'published' => array(
       'name' => 'published',
-      'label' => 'Published',
+      'label' => 'Finalised',
       'description' => 'Make this version live',
       'weight' => '-6',
     ),

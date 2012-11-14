@@ -15,7 +15,7 @@ function crf_workbench_default_rules_configuration() {
       "REQUIRES" : [ "workbench_moderation", "rules" ],
       "ON" : [ "workbench_moderation_after_moderation_transition" ],
       "IF" : [
-        { "contents_current_state" : { "node" : [ "node" ], "moderation_state" : "finalised" } },
+        { "contents_current_state" : { "node" : [ "node" ], "moderation_state" : "published" } },
         { "entity_has_field" : { "entity" : [ "node" ], "field" : "field_crf_request" } }
       ],
       "DO" : [
