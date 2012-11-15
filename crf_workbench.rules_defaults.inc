@@ -16,19 +16,37 @@ function crf_workbench_default_rules_configuration() {
       "ON" : [ "workbench_moderation_after_moderation_transition" ],
       "IF" : [
         { "contents_current_state" : { "node" : [ "node" ], "moderation_state" : "published" } },
-        { "entity_has_field" : { "entity" : [ "node" ], "field" : "field_crf_request" } }
-      ],
-      "DO" : [
-        { "entity_fetch" : {
-            "USING" : { "type" : "user", "id" : [ "node:field-crf-request:author:uid" ] },
-            "PROVIDE" : { "entity_fetched" : { "ocha_user" : "OCHA user" } }
+        { "entity_has_field" : { "entity" : [ "node" ], "field" : "field_crf_request" } },
+        { "entity_has_field" : {
+            "entity" : [ "node:field-crf-request" ],
+            "field" : "field_crf_req_contact"
           }
         },
+        { "entity_has_field" : { "entity" : [ "node" ], "field" : "field_cluster" } },
+        { "entity_has_field" : {
+            "entity" : [ "node:field-cluster:field-information-focal-points:0" ],
+            "field" : "field_contact_email"
+          }
+        },
+        { "entity_has_field" : {
+            "entity" : [ "node:field-cluster:field-information-focal-points:0" ],
+            "field" : "field_contact_first_name"
+          }
+        },
+        { "entity_has_field" : {
+            "entity" : [ "node:field-cluster:field-information-focal-points:0" ],
+            "field" : "field_contact_lastname"
+          }
+        }
+      ],
+      "DO" : [
         { "mail" : {
-            "to" : [ "node:author:mail" ],
-            "subject" : "[node:content-type] provided for node:field-cluster:name-field in node:field-crf-request:title is now finalised",
-            "message" : "Dear [node:author:name],\\r\\n\\r\\nKindly note that the [node:content-type] for node:field-cluster:name-field in the Information Request node:field-crf-request:title has been finalised.  The information can be viewed online: [node:url]\\r\\n\\r\\nNo action is required on your part at this time.\\r\\n\\r\\nKind regards,\\r\\nOCHA",
-            "from" : [ "ocha-user:mail" ],
+            "to" : [
+              "node:field-cluster:field-information-focal-points:0:field-contact-email"
+            ],
+            "subject" : "[node:content-type] provided for [node:field-cluster:name] in [node:field-crf-request:title] is now finalised",
+            "message" : "Dear [node:field-cluster:field-information-focal-points:0:field-contact-first-name] [node:field-cluster:field-information-focal-points:0:field-contact-lastname],\\r\\n\\r\\nKindly note that the [node:content-type] for [node:field-cluster:name-field] in the Information Request [node:field-crf-request:title] has been finalised.  The information can be viewed online: [node:url]\\r\\n\\r\\nNo action is required on your part at this time.\\r\\n\\r\\nKind regards,\\r\\nOCHA",
+            "from" : [ "node:field-crf-request:field-crf-req-contact:0:mail" ],
             "language" : [ "" ]
           }
         },
@@ -43,21 +61,39 @@ function crf_workbench_default_rules_configuration() {
       "ON" : [ "workbench_moderation_after_moderation_transition" ],
       "IF" : [
         { "contents_current_state" : { "node" : [ "node" ], "moderation_state" : "needs_review" } },
-        { "entity_has_field" : { "entity" : [ "node" ], "field" : "field_crf_request" } }
-      ],
-      "DO" : [
-        { "entity_fetch" : {
-            "USING" : { "type" : "user", "id" : [ "node:field-crf-request:author:uid" ] },
-            "PROVIDE" : { "entity_fetched" : { "ocha_user" : "OCHA user" } }
+        { "entity_has_field" : { "entity" : [ "node" ], "field" : "field_crf_request" } },
+        { "entity_has_field" : {
+            "entity" : [ "node:field-crf-request" ],
+            "field" : "field_crf_req_contact"
           }
         },
-        { "data_set" : { "data" : [ "node:author" ], "value" : [ "ocha-user" ] } },
+        { "entity_has_field" : { "entity" : [ "node" ], "field" : "field_cluster" } },
+        { "entity_has_field" : {
+            "entity" : [ "node:field-cluster:field-information-focal-points:0" ],
+            "field" : "field_contact_email"
+          }
+        }
+      ],
+      "DO" : [
+        { "entity_query" : {
+            "USING" : {
+              "type" : "user",
+              "property" : "mail",
+              "value" : [
+                "node:field-cluster:field-information-focal-points:0:field-contact-email"
+              ],
+              "limit" : "1"
+            },
+            "PROVIDE" : { "entity_fetched" : { "information_focal_point" : "Information Focal Point" } }
+          }
+        },
+        { "data_set" : { "data" : [ "node:author" ], "value" : [ "information-focal-point:0" ] } },
         { "workbench_access_assign_access_section" : { "node" : [ "node" ], "access_section" : "46" } },
         { "mail" : {
             "to" : [ "node:author:mail" ],
             "subject" : "OCHA request information review for [node:author:name] in Request [node:field-crf-request:title]",
             "message" : "Dear [node:author:name],\\r\\n\\r\\nOCHA has reviewed your [node:content-type] submission in [node:field-crf-request:title] and has suggested some changes or a review. Kindly review the information at: [node:url].\\r\\n\\r\\nYou can choose to edit the content as well as view a comparison of historical modifications on this [node:content-type] before re-submitting it to OCHA.\\r\\n\\r\\nKind regards,\\r\\nOCHA",
-            "from" : [ "ocha-user:mail" ],
+            "from" : [ "node:field-crf-request:author:mail" ],
             "language" : [ "" ]
           }
         },
@@ -81,7 +117,10 @@ function crf_workbench_default_rules_configuration() {
       ],
       "DO" : [
         { "entity_fetch" : {
-            "USING" : { "type" : "user", "id" : [ "node:field-crf-request:author:uid" ] },
+            "USING" : {
+              "type" : "user",
+              "id" : [ "node:field-crf-request:field-crf-req-contact:0:uid" ]
+            },
             "PROVIDE" : { "entity_fetched" : { "ocha_user" : "OCHA user" } }
           }
         },
