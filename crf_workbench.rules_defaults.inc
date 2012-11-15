@@ -72,7 +72,12 @@ function crf_workbench_default_rules_configuration() {
       "ON" : [ "workbench_moderation_after_moderation_transition" ],
       "IF" : [
         { "contents_current_state" : { "node" : [ "node" ], "moderation_state" : "submitted_to_ocha" } },
-        { "entity_has_field" : { "entity" : [ "node" ], "field" : "field_crf_request" } }
+        { "entity_has_field" : { "entity" : [ "node" ], "field" : "field_crf_request" } },
+        { "entity_has_field" : {
+            "entity" : [ "node:field-crf-request" ],
+            "field" : "field_crf_req_contact"
+          }
+        }
       ],
       "DO" : [
         { "entity_fetch" : {
@@ -83,10 +88,10 @@ function crf_workbench_default_rules_configuration() {
         { "data_set" : { "data" : [ "node:author" ], "value" : [ "ocha-user" ] } },
         { "workbench_access_assign_access_section" : { "node" : [ "node" ], "access_section" : "45" } },
         { "mail" : {
-            "to" : [ "ocha-user:mail" ],
-            "subject" : "[node:content-type] provided by [node:author:field-first-name] [node:author:field-last-name] for node:field-cluster:name-field in node:field-crf-request:title",
-            "message" : "Dear [current-contact:field-first-name] [current-contact:field-last-name],\\r\\n\\r\\nKindly note that [node:author:field-first-name] [node:author:field-last-name] has uploaded a [node:content-type] for node:field-cluster:name-field in the Information Request node:field-crf-request:title to the CRF website.\\r\\n\\r\\nThe data can be reviewed at: [node:url]\\r\\n\\r\\nAt this point, we encourage you review the submission. If changes are required, you can make the necessary edits and send the information back to [node:author:name] by selecting \\u0022Request Review\\u0022. If the information is complete, you can finish the process by selecting \\u0022Finalise\\u0022\\r\\n\\r\\nKind regards.",
-            "from" : [ "node:author:mail" ],
+            "to" : [ "node:field-crf-request:field-crf-req-contact:0:mail" ],
+            "subject" : "[node:content-type] provided by [site:current-user:field-first-name] [site:current-user:field-last-name] for [node:field-cluster:name-field] in [node:field-crf-request:title]",
+            "message" : "Dear [node:field-crf-request:field-crf-req-contact:0:field-first-name] [node:field-crf-request:field-crf-req-contact:0:field-last-name],\\r\\n\\r\\nKindly note that [site:current-user:field-first-name] [site:current-user:field-last-name] has uploaded a [node:content-type] for [node:field-cluster:name-field] in the Information Request [node:field-crf-request:title] to the CRF website.\\r\\n\\r\\nThe data can be reviewed at: [node:url]\\r\\n\\r\\nAt this point, we encourage you review the submission. If changes are required, you can make the necessary edits and send the information back to [site:current-user:field-first-name] [site:current-user:field-last-name] by selecting \\u0022Request Review\\u0022. If the information is complete, you can finish the process by selecting \\u0022Finalise\\u0022.\\r\\n\\r\\nKind regards.",
+            "from" : [ "site:current-user:mail" ],
             "language" : [ "" ]
           }
         },
