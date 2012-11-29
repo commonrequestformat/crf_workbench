@@ -110,6 +110,13 @@ function crf_workbench_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'workbench_access_node_type_humanitarian_bulletin';
+  $strongarm->value = 1;
+  $export['workbench_access_node_type_humanitarian_bulletin'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'workbench_access_node_type_indicator_data';
   $strongarm->value = 0;
   $export['workbench_access_node_type_indicator_data'] = $strongarm;
@@ -141,6 +148,13 @@ function crf_workbench_strongarm() {
   $strongarm->name = 'workbench_access_node_type_page';
   $strongarm->value = 0;
   $export['workbench_access_node_type_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'workbench_access_node_type_pipeline_monitoring';
+  $strongarm->value = 1;
+  $export['workbench_access_node_type_pipeline_monitoring'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -180,6 +194,13 @@ function crf_workbench_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'workbench_moderation_default_state_contact';
+  $strongarm->value = 'draft';
+  $export['workbench_moderation_default_state_contact'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'workbench_moderation_default_state_contacts_upload';
   $strongarm->value = 'draft';
   $export['workbench_moderation_default_state_contacts_upload'] = $strongarm;
@@ -201,9 +222,23 @@ function crf_workbench_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'workbench_moderation_default_state_humanitarian_bulletin';
+  $strongarm->value = 'draft';
+  $export['workbench_moderation_default_state_humanitarian_bulletin'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'workbench_moderation_default_state_indicator_data_batch';
   $strongarm->value = 'draft';
   $export['workbench_moderation_default_state_indicator_data_batch'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'workbench_moderation_default_state_pipeline_monitoring';
+  $strongarm->value = 'draft';
+  $export['workbench_moderation_default_state_pipeline_monitoring'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

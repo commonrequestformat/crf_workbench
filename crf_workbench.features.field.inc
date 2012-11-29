@@ -49,6 +49,12 @@ function crf_workbench_field_default_fields() {
           'type' => 'hidden',
           'weight' => 1,
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'taxonomy_term',
       'field_name' => 'description_field',
@@ -107,6 +113,12 @@ function crf_workbench_field_default_fields() {
       'description' => 'A field replacing taxonomy term name.',
       'display' => array(
         'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'entityreference_view_widget' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',

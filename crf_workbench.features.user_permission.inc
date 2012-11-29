@@ -105,14 +105,18 @@ function crf_workbench_user_default_permissions() {
   // Exported permission: delete terms in sections.
   $permissions['delete terms in sections'] = array(
     'name' => 'delete terms in sections',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: edit terms in sections.
   $permissions['edit terms in sections'] = array(
     'name' => 'edit terms in sections',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'taxonomy',
   );
 
@@ -237,6 +241,7 @@ function crf_workbench_user_default_permissions() {
     'name' => 'view any unpublished content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'manager',
     ),
     'module' => 'view_unpublished',
   );
@@ -299,6 +304,7 @@ function crf_workbench_user_default_permissions() {
     'name' => 'view any unpublished link content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'manager',
     ),
     'module' => 'view_unpublished',
   );
@@ -308,6 +314,7 @@ function crf_workbench_user_default_permissions() {
     'name' => 'view any unpublished page content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'manager',
     ),
     'module' => 'view_unpublished',
   );
@@ -337,7 +344,8 @@ function crf_workbench_user_default_permissions() {
     'name' => 'view moderation history',
     'roles' => array(
       0 => 'administrator',
-      1 => 'manager',
+      1 => 'editor',
+      2 => 'manager',
     ),
     'module' => 'workbench_moderation',
   );
@@ -358,6 +366,8 @@ function crf_workbench_user_default_permissions() {
     'name' => 'view workbench access information',
     'roles' => array(
       0 => 'administrator',
+      1 => 'editor',
+      2 => 'manager',
     ),
     'module' => 'workbench_access',
   );
