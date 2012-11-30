@@ -111,7 +111,7 @@ function crf_workbench_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'workbench_access_node_type_humanitarian_bulletin';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['workbench_access_node_type_humanitarian_bulletin'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -153,7 +153,7 @@ function crf_workbench_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'workbench_access_node_type_pipeline_monitoring';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['workbench_access_node_type_pipeline_monitoring'] = $strongarm;
 
   $strongarm = new stdClass();
