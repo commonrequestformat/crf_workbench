@@ -152,6 +152,16 @@ function crf_workbench_user_default_permissions() {
     'module' => 'workbench_moderation',
   );
 
+  // Exported permission: moderate content from submitted_to_ocha to published.
+  $permissions['moderate content from submitted_to_ocha to published'] = array(
+    'name' => 'moderate content from submitted_to_ocha to published',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'manager',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
   // Exported permission: use workbench_moderation my drafts tab.
   $permissions['use workbench_moderation my drafts tab'] = array(
     'name' => 'use workbench_moderation my drafts tab',
