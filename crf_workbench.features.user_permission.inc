@@ -30,15 +30,6 @@ function crf_workbench_user_default_permissions() {
     'module' => 'workbench_access',
   );
 
-  // Exported permission: administer maillog.
-  $permissions['administer maillog'] = array(
-    'name' => 'administer maillog',
-    'roles' => array(
-      0 => 'administrator',
-    ),
-    'module' => 'maillog',
-  );
-
   // Exported permission: administer workbench.
   $permissions['administer workbench'] = array(
     'name' => 'administer workbench',
@@ -91,15 +82,6 @@ function crf_workbench_user_default_permissions() {
       0 => 'administrator',
     ),
     'module' => 'workbench_moderation',
-  );
-
-  // Exported permission: delete maillog.
-  $permissions['delete maillog'] = array(
-    'name' => 'delete maillog',
-    'roles' => array(
-      0 => 'administrator',
-    ),
-    'module' => 'maillog',
   );
 
   // Exported permission: delete terms in sections.
@@ -159,15 +141,6 @@ function crf_workbench_user_default_permissions() {
       1 => 'manager',
     ),
     'module' => 'view_unpublished',
-  );
-
-  // Exported permission: view maillog.
-  $permissions['view maillog'] = array(
-    'name' => 'view maillog',
-    'roles' => array(
-      0 => 'administrator',
-    ),
-    'module' => 'maillog',
   );
 
   // Exported permission: view moderation history.
