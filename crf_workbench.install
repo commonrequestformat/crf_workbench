@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function crf_workbench_install() {
+  // Set this module's weight to be 
+  // higher then workbench_moderation's.
+  // Required for hook_menu_alter to fire.
+  $weight = db_select('system', 's')
+                ->fields('s', array('weight'))
+                ->condition('name', 'workbench_moderation', '=')
+                ->execute()
+                ->fetchField();
+
+  db_update('system')
+      ->fields(array('weight' => $weight +1))
+      ->condition('name', 'crf_workbench', '=')
+      ->execute();
+}
+

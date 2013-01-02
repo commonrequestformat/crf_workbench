@@ -6,6 +6,15 @@
 
 include_once 'crf_workbench.features.inc';
 
+/**
+ * Implements hook_menu_alter().
+ */
+function crf_workbench_menu_alter(&$items) {
+  // Override the node edit menu item title.
+  $items['node/%node/edit']['title callback'] = 'crf_workbench_edit_tab_title';
+  $items['node/%node/edit']['title arguments'] = array(1);
+}
+
 
 /**
  * Implements hook_workbench_access_node_element_alter().
@@ -28,4 +37,19 @@ function crf_workbench_workbench_access_node_element_alter(&$element, $form_stat
       $element['#value'] = array(current(array_keys($clusters_term)));
     }
   }
+}
+
+// Lifted from workbench_moderation_edit_tab_title()
+function crf_workbench_edit_tab_title($node) {
+  $state = $node->workbench_moderation;
+
+  // Use the normal tab title if the node type is not under moderation
+  // or if it's published (ie finalised).
+  if (!workbench_moderation_node_type_moderated($node->type) ||
+     (!empty($state['published']) && $state['published']->vid == $state['current']->vid)) {
+    return t('Edit');
+  }
+
+  // The latest draft is not published.
+  return t('Edit draft');
 }
