@@ -41,13 +41,15 @@ function crf_workbench_workbench_access_node_element_alter(&$element, $form_stat
 
 // Lifted from workbench_moderation_edit_tab_title()
 function crf_workbench_edit_tab_title($node) {
-  $state = $node->workbench_moderation;
+  if (isset($node->workbench_moderation)) {
+    $state = $node->workbench_moderation;
 
-  // Use the normal tab title if the node type is not under moderation
-  // or if it's published (ie finalised).
-  if (!workbench_moderation_node_type_moderated($node->type) ||
-     (!empty($state['published']) && $state['published']->vid == $state['current']->vid)) {
-    return t('Edit');
+    // Use the normal tab title if the node type is not under moderation
+    // or if it's published (ie finalised).
+    if (!workbench_moderation_node_type_moderated($node->type) ||
+       (!empty($state['published']) && $state['published']->vid == $state['current']->vid)) {
+      return t('Edit');
+    }
   }
 
   // The latest draft is not published.
