@@ -72,7 +72,8 @@ function crf_workbench_default_rules_configuration() {
             "entity" : [ "node:field-cluster:field-information-focal-points:0" ],
             "field" : "field_contact_email"
           }
-        }
+        },
+        { "entity_has_field" : { "entity" : [ "node" ], "field" : "field_comments" } }
       ],
       "DO" : [
         { "entity_query" : {
@@ -92,7 +93,7 @@ function crf_workbench_default_rules_configuration() {
         { "mail" : {
             "to" : [ "node:author:mail" ],
             "subject" : "OCHA request information review for [node:author:name] in Request [node:field-crf-request:title]",
-            "message" : "Dear [node:author:name],\\r\\n\\r\\nOCHA has reviewed your [node:content-type] submission in [node:field-crf-request:title] and has suggested some changes or a review. Kindly review the information at: [node:url].\\r\\n\\r\\nYou can choose to edit the content as well as view a comparison of historical modifications on this [node:content-type] before re-submitting it to OCHA.\\r\\n\\r\\nKind regards,\\r\\nOCHA",
+            "message" : "Dear [node:author:name],\\r\\n\\r\\nOCHA has reviewed your [node:content-type] submission in [node:field-crf-request:title] and has suggested some changes or a review. Kindly review the information at: [node:url].\\r\\n\\r\\n[node:field-comments]\\r\\n\\r\\nYou can choose to edit the content as well as view a comparison of historical modifications on this [node:content-type] before re-submitting it to OCHA.\\r\\n\\r\\nKind regards,\\r\\nOCHA",
             "from" : [ "node:field-crf-request:author:mail" ],
             "language" : [ "" ]
           }
