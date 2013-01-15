@@ -21,6 +21,10 @@ function crf_workbench_workbench_moderation_export_transitions() {
       'from_name' => 'submitted_to_ocha',
       'to_name' => 'needs_review',
     ),
+    'submitted_to_ocha:published' => array(
+      'from_name' => 'submitted_to_ocha',
+      'to_name' => 'published',
+    ),
   );
   return $items;
 }
