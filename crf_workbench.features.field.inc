@@ -33,7 +33,9 @@ function crf_workbench_field_default_fields() {
       ),
       'locked' => '0',
       'module' => 'text',
-      'settings' => array(),
+      'settings' => array(
+        'entity_translation_sync' => FALSE,
+      ),
       'translatable' => '1',
       'type' => 'text_with_summary',
     ),
@@ -62,6 +64,7 @@ function crf_workbench_field_default_fields() {
       'required' => FALSE,
       'settings' => array(
         'display_summary' => 0,
+        'entity_translation_sync' => FALSE,
         'text_processing' => 1,
         'user_register_form' => FALSE,
       ),
@@ -101,6 +104,7 @@ function crf_workbench_field_default_fields() {
       'locked' => '0',
       'module' => 'text',
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'max_length' => 255,
       ),
       'translatable' => '1',
@@ -130,6 +134,7 @@ function crf_workbench_field_default_fields() {
       'label' => 'Name',
       'required' => TRUE,
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'text_processing' => 0,
         'user_register_form' => FALSE,
       ),

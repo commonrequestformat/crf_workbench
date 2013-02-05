@@ -22,11 +22,10 @@ function crf_workbench_uuid_default_entities() {
         0 => array(
           'format' => 'simple',
           'summary' => NULL,
-          'value' => '',
+          'value' => NULL,
         ),
       ),
     ),
-    'description_original' => '',
     'format' => 'simple',
     'name' => 'OCHA',
     'name_field' => array(
@@ -37,7 +36,6 @@ function crf_workbench_uuid_default_entities() {
         ),
       ),
     ),
-    'name_original' => 'OCHA',
     'rdf_mapping' => array(
       'rdftype' => array(
         0 => 'skos:Concept',
@@ -65,6 +63,10 @@ function crf_workbench_uuid_default_entities() {
         ),
         'type' => 'rel',
       ),
+    ),
+    'translations' => array(
+      'original' => NULL,
+      'data' => array(),
     ),
     'uuid' => 'a74f3cb4-9641-4948-9cb8-9b62ee1ac7aa',
     'vocabulary_machine_name' => 'sections',
@@ -82,11 +84,10 @@ function crf_workbench_uuid_default_entities() {
         0 => array(
           'format' => 'simple',
           'summary' => NULL,
-          'value' => '',
+          'value' => NULL,
         ),
       ),
     ),
-    'description_original' => '',
     'format' => 'simple',
     'name' => 'Clusters',
     'name_field' => array(
@@ -97,7 +98,6 @@ function crf_workbench_uuid_default_entities() {
         ),
       ),
     ),
-    'name_original' => 'Clusters',
     'rdf_mapping' => array(
       'rdftype' => array(
         0 => 'skos:Concept',
@@ -125,6 +125,10 @@ function crf_workbench_uuid_default_entities() {
         ),
         'type' => 'rel',
       ),
+    ),
+    'translations' => array(
+      'original' => NULL,
+      'data' => array(),
     ),
     'uuid' => 'fb03c566-0ce0-4edc-a4f1-0ed8ab4289a1',
     'vocabulary_machine_name' => 'sections',
