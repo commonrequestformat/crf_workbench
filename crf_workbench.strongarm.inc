@@ -50,7 +50,6 @@ function crf_workbench_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'workbench_access_menu';
   $strongarm->value = array(
-    'devel' => 0,
     'main-menu' => 0,
     'management' => 0,
     'navigation' => 0,
@@ -175,6 +174,7 @@ function crf_workbench_strongarm() {
     'display_properties' => 0,
     'emergencies' => 0,
     'funding' => 0,
+    'geographic_level' => 0,
     'job_title' => 0,
     'locations' => 0,
     'organization_types' => 0,

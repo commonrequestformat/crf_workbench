@@ -126,7 +126,7 @@ function crf_workbench_default_rules_configuration() {
           }
         },
         { "data_set" : { "data" : [ "node:author" ], "value" : [ "ocha-user" ] } },
-        { "workbench_access_assign_access_section" : { "node" : [ "node" ], "access_section" : "45" } },
+        { "workbench_access_assign_access_section" : { "node" : [ "node" ], "access_section" : "1" } },
         { "mail" : {
             "to" : [ "node:field-crf-request:field-crf-req-contact:0:mail" ],
             "subject" : "[node:content-type] provided by [site:current-user:field-first-name] [site:current-user:field-last-name] for [node:field-cluster:name-field] in [node:field-crf-request:title]",

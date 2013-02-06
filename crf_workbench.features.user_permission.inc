@@ -24,6 +24,8 @@ function crf_workbench_user_default_permissions() {
     'name' => 'access workbench access by role',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'manager' => 'manager',
     ),
     'module' => 'workbench_access',
   );
@@ -105,6 +107,8 @@ function crf_workbench_user_default_permissions() {
     'name' => 'use workbench_moderation my drafts tab',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'manager' => 'manager',
     ),
     'module' => 'workbench_moderation',
   );
@@ -114,6 +118,7 @@ function crf_workbench_user_default_permissions() {
     'name' => 'use workbench_moderation needs review tab',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'workbench_moderation',
   );
@@ -123,6 +128,7 @@ function crf_workbench_user_default_permissions() {
     'name' => 'view all unpublished content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'workbench_moderation',
   );
@@ -132,6 +138,7 @@ function crf_workbench_user_default_permissions() {
     'name' => 'view any unpublished content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'view_unpublished',
   );
@@ -141,6 +148,8 @@ function crf_workbench_user_default_permissions() {
     'name' => 'view moderation history',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'manager' => 'manager',
     ),
     'module' => 'workbench_moderation',
   );
@@ -150,6 +159,8 @@ function crf_workbench_user_default_permissions() {
     'name' => 'view moderation messages',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'manager' => 'manager',
     ),
     'module' => 'workbench_moderation',
   );
@@ -159,6 +170,8 @@ function crf_workbench_user_default_permissions() {
     'name' => 'view workbench access information',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'manager' => 'manager',
     ),
     'module' => 'workbench_access',
   );
