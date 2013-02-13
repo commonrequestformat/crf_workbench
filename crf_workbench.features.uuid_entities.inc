@@ -26,7 +26,6 @@ function crf_workbench_uuid_default_entities() {
         ),
       ),
     ),
-    'description_original' => NULL,
     'format' => 'simple',
     'name' => 'OCHA',
     'name_field' => array(
@@ -37,7 +36,6 @@ function crf_workbench_uuid_default_entities() {
         ),
       ),
     ),
-    'name_original' => 'OCHA',
     'rdf_mapping' => array(
       'rdftype' => array(
         0 => 'skos:Concept',
@@ -90,7 +88,6 @@ function crf_workbench_uuid_default_entities() {
         ),
       ),
     ),
-    'description_original' => NULL,
     'format' => 'simple',
     'name' => 'Clusters',
     'name_field' => array(
@@ -101,7 +98,6 @@ function crf_workbench_uuid_default_entities() {
         ),
       ),
     ),
-    'name_original' => 'Clusters',
     'rdf_mapping' => array(
       'rdftype' => array(
         0 => 'skos:Concept',

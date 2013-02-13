@@ -45,7 +45,7 @@ function crf_workbench_default_rules_configuration() {
               "node:field-cluster:field-information-focal-points:0:field-contact-email"
             ],
             "subject" : "[node:content-type] provided for [node:field-cluster:name] in [node:field-crf-request:title] is now finalised",
-            "message" : "Dear [node:field-cluster:field-information-focal-points:0:field-contact-first-name] [node:field-cluster:field-information-focal-points:0:field-contact-lastname],\\r\\n\\r\\nKindly note that the [node:content-type] for [node:field-cluster:name-field] in the Information Request [node:field-crf-request:title] has been finalised.  The information can be viewed online: [node:url]\\r\\n\\r\\nNo action is required on your part at this time.\\r\\n\\r\\nKind regards,\\r\\nOCHA",
+            "message" : "Dear [node:field-cluster:field-information-focal-points:0:field-contact-first-name] [node:field-cluster:field-information-focal-points:0:field-contact-lastname],\\r\\n\\r\\nKindly note that the [node:content-type] for [node:field-cluster:name-field] in the Information Request [node:field-crf-request:title] has been finalised.\\r\\n\\r\\n[node:log]\\r\\n\\r\\nThe information can be viewed online: [node:url]\\r\\n\\r\\nNo action is required on your part at this time.\\r\\n\\r\\nKind regards,\\r\\nOCHA",
             "from" : [ "node:field-crf-request:field-crf-req-contact:0:mail" ],
             "language" : [ "" ]
           }
@@ -72,8 +72,7 @@ function crf_workbench_default_rules_configuration() {
             "entity" : [ "node:field-cluster:field-information-focal-points:0" ],
             "field" : "field_contact_email"
           }
-        },
-        { "entity_has_field" : { "entity" : [ "node" ], "field" : "field_comments" } }
+        }
       ],
       "DO" : [
         { "entity_query" : {
@@ -89,11 +88,11 @@ function crf_workbench_default_rules_configuration() {
           }
         },
         { "data_set" : { "data" : [ "node:author" ], "value" : [ "information-focal-point:0" ] } },
-        { "workbench_access_assign_access_section" : { "node" : [ "node" ], "access_section" : "46" } },
+        { "workbench_access_assign_access_section" : { "node" : [ "node" ], "access_section" : "2" } },
         { "mail" : {
             "to" : [ "node:author:mail" ],
             "subject" : "OCHA request information review for [node:author:name] in Request [node:field-crf-request:title]",
-            "message" : "Dear [node:author:name],\\r\\n\\r\\nOCHA has reviewed your [node:content-type] submission in [node:field-crf-request:title] and has suggested some changes or a review. Kindly review the information at: [node:url].\\r\\n\\r\\n[node:field-comments]\\r\\n\\r\\nYou can choose to edit the content as well as view a comparison of historical modifications on this [node:content-type] before re-submitting it to OCHA.\\r\\n\\r\\nKind regards,\\r\\nOCHA",
+            "message" : "Dear [node:author:name],\\r\\n\\r\\nOCHA has reviewed your [node:content-type] submission in [node:field-crf-request:title] and has suggested some changes or a review.\\r\\n\\r\\n[node:log]\\r\\n\\r\\nKindly review the information at: [node:url].\\r\\n\\r\\nYou can choose to edit the content as well as view a comparison of historical modifications on this [node:content-type] before re-submitting it to OCHA.\\r\\n\\r\\nKind regards,\\r\\nOCHA",
             "from" : [ "node:field-crf-request:author:mail" ],
             "language" : [ "" ]
           }
@@ -130,7 +129,7 @@ function crf_workbench_default_rules_configuration() {
         { "mail" : {
             "to" : [ "node:field-crf-request:field-crf-req-contact:0:mail" ],
             "subject" : "[node:content-type] provided by [site:current-user:field-first-name] [site:current-user:field-last-name] for [node:field-cluster:name-field] in [node:field-crf-request:title]",
-            "message" : "Dear [node:field-crf-request:field-crf-req-contact:0:field-first-name] [node:field-crf-request:field-crf-req-contact:0:field-last-name],\\r\\n\\r\\nKindly note that [site:current-user:field-first-name] [site:current-user:field-last-name] has uploaded a [node:content-type] for [node:field-cluster:name-field] in the Information Request [node:field-crf-request:title] to the CRF website.\\r\\n\\r\\nThe data can be reviewed at: [node:url]\\r\\n\\r\\nAt this point, we encourage you review the submission. If changes are required, you can make the necessary edits and send the information back to [site:current-user:field-first-name] [site:current-user:field-last-name] by selecting \\u0022Request Review\\u0022. If the information is complete, you can finish the process by selecting \\u0022Finalise\\u0022.\\r\\n\\r\\nKind regards.",
+            "message" : "Dear [node:field-crf-request:field-crf-req-contact:0:field-first-name] [node:field-crf-request:field-crf-req-contact:0:field-last-name],\\r\\n\\r\\nKindly note that [site:current-user:field-first-name] [site:current-user:field-last-name] has uploaded a [node:content-type] for [node:field-cluster:name-field] in the Information Request [node:field-crf-request:title] to the CRF website.\\r\\n\\r\\n[node:log]\\r\\n\\r\\nThe data can be reviewed at: [node:url]\\r\\n\\r\\nAt this point, we encourage you review the submission. If changes are required, you can make the necessary edits and send the information back to [site:current-user:field-first-name] [site:current-user:field-last-name] by selecting \\u0022Request Review\\u0022. If the information is complete, you can finish the process by selecting \\u0022Finalise\\u0022.\\r\\n\\r\\nKind regards.",
             "from" : [ "site:current-user:mail" ],
             "language" : [ "" ]
           }
