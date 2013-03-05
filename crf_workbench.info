@@ -84,4 +84,3 @@ features[workbench_moderation_states][] = submitted_to_ocha
 features[workbench_moderation_transitions][] = draft:submitted_to_ocha
 features[workbench_moderation_transitions][] = needs_review:submitted_to_ocha
 features[workbench_moderation_transitions][] = submitted_to_ocha:needs_review
-features[workbench_moderation_transitions][] = submitted_to_ocha:published

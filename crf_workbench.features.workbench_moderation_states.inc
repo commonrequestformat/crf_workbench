@@ -23,7 +23,7 @@ function crf_workbench_workbench_moderation_export_states() {
     ),
     'published' => array(
       'name' => 'published',
-      'label' => 'Finalised',
+      'label' => 'Published',
       'description' => 'Make this version live',
       'weight' => '-6',
     ),
