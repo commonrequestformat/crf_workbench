@@ -159,8 +159,6 @@ function crf_workbench_user_default_permissions() {
     'name' => 'view moderation messages',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
-      'manager' => 'manager',
     ),
     'module' => 'workbench_moderation',
   );

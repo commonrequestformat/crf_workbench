@@ -42,7 +42,7 @@ function crf_workbench_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'workbench_access_label';
-  $strongarm->value = 'Section';
+  $strongarm->value = '';
   $export['workbench_access_label'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -50,6 +50,7 @@ function crf_workbench_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'workbench_access_menu';
   $strongarm->value = array(
+    'devel' => 0,
     'main-menu' => 0,
     'management' => 0,
     'navigation' => 0,
@@ -180,6 +181,7 @@ function crf_workbench_strongarm() {
     'organization_types' => 0,
     'organizations' => 0,
     'population_types' => 0,
+    'reporting_types' => 0,
     'themes' => 0,
   );
   $export['workbench_access_taxonomy'] = $strongarm;
