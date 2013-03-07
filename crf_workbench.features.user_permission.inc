@@ -168,8 +168,6 @@ function crf_workbench_user_default_permissions() {
     'name' => 'view workbench access information',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
-      'manager' => 'manager',
     ),
     'module' => 'workbench_access',
   );
